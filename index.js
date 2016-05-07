@@ -14,7 +14,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/authenticate', function(request, response) {
-    response.json({ cloud_name:req.query.cloud_name});
+    response.json({ cloud_name:request.query.cloud_name});
 });
 
 app.listen(app.get('port'), function() {
