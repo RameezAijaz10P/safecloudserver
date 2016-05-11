@@ -6,7 +6,7 @@ db = db.connect('collections', ['dropbox']);
 
 var app_key='ps438wprmnwof57';
 var app_secret='wjgf8kparw9pgsx';
-var redirect_url='http://localhost:5000/dropboxredirecturl';
+var redirect_url='https://thawing-woodland-35235.herokuapp.com/dropboxredirecturl';
 var user={id:'',access_token:''};
 app.set('port', (process.env.PORT || 5000));
 
@@ -60,6 +60,9 @@ app.get('/dropboxredirecturl', function(request, response) {
 
 
     });
+});
+app.get('/googledriveredirecturl', function(request, response) {
+    var auth_code=request.query.code;
 });
 app.get('/accesstoken', function(request, response) {
     var cloud_name=request.query.cloud_name;
